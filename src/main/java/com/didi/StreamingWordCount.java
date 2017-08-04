@@ -8,15 +8,20 @@ import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.State;
 import org.apache.spark.streaming.StateSpec;
 import org.apache.spark.streaming.api.java.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import scala.Tuple2;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Hello Spark.
  */
 public class StreamingWordCount {
+    private static Logger logger = LoggerFactory.getLogger(StreamingWordCount.class);
+
     public static void main(String[] args) throws Exception {
         SparkConf conf = new SparkConf()
                 .setMaster("local[2]")
@@ -48,6 +53,18 @@ public class StreamingWordCount {
         stateDstream.print();
         //start
         ssc.start();
+
+        // kafka log
+        Map<String, String> env = System.getenv();
+        String logUrlStdErr = env.get("SPARK_LOG_URL_STDERR");
+
+        System.out.println("logUrlStdErr=" + logUrlStdErr);
+        System.out.println("SPARK_MASTER=" + System.getProperty("spark.master"));
+
+        logger.info("[KAFKA LOG][logUrlStdErr1]={}", logUrlStdErr);
+        logger.info("[KAFKA LOG][logUrlStdErr2]={}", System.getProperty("SPARK_LOG_URL_STDERR"));
+        logger.info("[KAFKA LOG][SPARK_MASTER]={}", System.getProperty("spark.master"));
+
         ssc.awaitTermination();
     }
 }
