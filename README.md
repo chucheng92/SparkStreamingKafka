@@ -1,3 +1,3 @@
 ## Intro
 
-SparkStreaming log data to Kafka
+Add Spark Streaming logs to Kafka.
