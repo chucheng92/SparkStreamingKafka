@@ -1,4 +1,4 @@
-package com.didi;
+package com.rannn;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;

@@ -1,4 +1,4 @@
-package com.didi;
+package com.rannn;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
