@@ -1,4 +1,4 @@
-package com.rannn;
+package com.rann;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,13 +17,7 @@ public class TestLog4jToKafka {
         }
 
         // kafka log
-
-        logger.info("[KAFKA LOG][SPARK_YARN_APP_IDEnv]={}", System.getenv("spark.yarn.app.id"));
-        logger.info("[KAFKA LOG][SPARK_YARN_APP_IDProperty]={}", System.getProperty("spark.yarn.app.id"));
-
-        logger.info("[KAFKA LOG][NM_HOSTEnv]={}", System.getenv("NM_HOST"));
-        logger.info("[KAFKA LOG][NM_HOSTProperty]={}", System.getProperty("NM_HOST"));
-
+        logger.info("[KAFKA LOG][NM_HOST]={}", System.getenv("NM_HOST"));
         logger.info("[KAFKA LOG][spark.master]={}", System.getProperty("spark.master"));
         logger.info("[KAFKA LOG][spark.yarn.app.id]={}", System.getProperty("spark.yarn.app.id"));
         logger.info("[KAFKA LOG][spark.submit.deployMode]={}", System.getProperty("spark.submit.deployMode"));

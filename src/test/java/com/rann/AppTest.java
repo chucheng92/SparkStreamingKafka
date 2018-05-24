@@ -1,4 +1,4 @@
-package com.rannn;
+package com.rann;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

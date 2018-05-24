@@ -1,4 +1,4 @@
-package com.rannn;
+package com.rann;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -55,14 +55,6 @@ public class StreamingWordCount {
         ssc.start();
 
         // kafka log
-        Map<String, String> env = System.getenv();
-        String logUrlStdErr = env.get("SPARK_LOG_URL_STDERR");
-
-        System.out.println("logUrlStdErr=" + logUrlStdErr);
-        System.out.println("SPARK_MASTER=" + System.getProperty("spark.master"));
-
-        logger.info("[KAFKA LOG][logUrlStdErr1]={}", logUrlStdErr);
-        logger.info("[KAFKA LOG][logUrlStdErr2]={}", System.getProperty("SPARK_LOG_URL_STDERR"));
         logger.info("[KAFKA LOG][SPARK_MASTER]={}", System.getProperty("spark.master"));
 
         ssc.awaitTermination();

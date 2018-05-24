@@ -1,3 +1,3 @@
 ## Intro
 
-Add Spark Streaming logs to Kafka.
+Make Spark Streaming Logs send to Kafka automatically.
